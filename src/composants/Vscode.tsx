@@ -184,7 +184,7 @@ export function Vscode() {
     const responses: Record<string, string> = {
       'specialite': 'Mehdi excelle dans l\'intégration d\'IA locales (RAG, Llama.cpp), le développement Full Stack (Next.js, Node.js) et le déploiement d\'infrastructures conteneurisées (DevOps/Docker).',
       'disponible': 'Oui ! Mehdi est disponible pour des projets SaaS autonomes et des architectures Full Stack.',
-      'cv': 'Le CV de Mehdi est disponible sur demande. Contactez-le à belkacem.mehdi@cesi.fr'
+      'cv': 'Le CV de Mehdi est disponible sur demande. Contactez-le à xlutirax@gmail.com'
     };
 
     setTimeout(() => {
@@ -314,7 +314,7 @@ export function Vscode() {
               className={styles.aiButton}
               onClick={() => handleAiQuestion('cv')}
             >
-              <PaperClipIcon className={styles.aiButtonIcon} /> Télécharger CV
+              <PaperClipIcon className={styles.aiButtonIcon} /> <a href="/Belkacem_MehdiCV.pdf" download target="_blank" rel="noopener noreferrer"><strong className={styles.cvLink}>Télécharger CV</strong></a>
             </button>
           </div>
         </div>
