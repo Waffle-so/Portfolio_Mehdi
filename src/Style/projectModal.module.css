@@ -1,0 +1,182 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modalClose {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 10000;
+}
+
+.modalClose:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.modalCloseIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.modalContent {
+  max-width: 100vw;
+  max-height: 90vh;
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modalImageContainer {
+  position: relative;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+.modalDetails {
+  width: 400px;
+  min-width: 300px;
+  padding: 30px;
+  background: white;
+  color: #262626;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.modalTitle {
+  font-family: 'Pixelify Sans', sans-serif;
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  color: #1a1a1a;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 15px;
+}
+
+.modalDescription {
+  margin: 0 0 20px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #262626;
+}
+
+.modalYear {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 16px;
+  color: #8e8e8e;
+  margin-top: auto;
+}
+
+.navButtonLeft,
+.navButtonRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.navButtonLeft:hover,
+.navButtonRight:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.navButtonLeft {
+  left: 20px;
+}
+
+.navButtonRight {
+  right: 20px;
+}
+
+.navIcon {
+  width: 24px;
+  height: 24px;
+  color: #222;
+}
+
+.dotsContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: background 0.3s;
+}
+
+.activeDot {
+  background: rgba(255, 255, 255, 1);
+}

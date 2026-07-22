@@ -1,0 +1,209 @@
+.container {
+  width: 100%;
+  margin-bottom: 150px;
+  justify-self: center;
+  align-self: end;
+  text-align: end;
+  position: relative;
+}
+
+.button {
+  display: flex;
+  align-items: end;
+  position: absolute;
+  right: 0;
+  top: -50px;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(82 82 91 / 1);
+  transition: color 0.2s;
+}
+
+.button:hover {
+  color: rgb(24 24 27 / 1);
+}
+
+:global(.dark) .button {
+  color: rgb(161 161 170 / 1);
+}
+
+:global(.dark) .button:hover {
+  color: rgb(244 244 245 / 1);
+}
+
+:global(.star) .button {
+  color: rgb(255, 255, 255);
+}
+
+:global(.star) .button:hover {
+  color: rgba(255, 255, 255, 0.61);
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.content {
+  margin-top: 5rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.765);
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+
+.strong {
+  border-radius: 5px;
+  padding: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 0, 0.539);
+}
+
+
+:global(.dark) .strong {
+  border: none;
+}
+
+:global(.star) .strong {
+  border: none;
+}
+
+:global(.dark) .content {
+  color: rgb(244, 244, 245, 0.61);
+}
+
+:global(.star) .content {
+  color: rgb(244, 244, 245, 0.61);
+}
+
+.content.open {
+  grid-template-rows: 1fr;
+  border-right: 2px solid rgba(21, 21, 21, 0.84);
+}
+
+:global(.dark) .content.open {
+  border-right: 2px solid rgba(156, 164, 93, 0.678);
+}
+
+:global(.star) .content.open {
+  border-right: 2px solid rgba(156, 164, 93, 0.678);
+}
+
+
+.content>div {
+  overflow: hidden;
+}
+
+:global(.dark) .content {
+  color: rgba(209, 213, 219, 0.678);
+}
+
+.section {
+  margin-bottom: 3rem;
+  width: 100%;
+  justify-content: end;
+  align-items: end;
+  text-align: right;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionId {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12px;
+  color: rgb(24 24 27 / 1);
+  margin-right: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+:global(.dark) .sectionId {
+  color: rgba(0, 0, 0, 0.881);
+  background-color: rgba(255, 255, 0, 0.934);
+}
+
+:global(.star) .sectionId {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 0, 0.934);
+}
+
+.sectionContent {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.link {
+  background-color: rgba(255, 255, 0, 0.539);
+  border-radius: 5px;
+  padding: 2px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  background-color: rgba(255, 255, 0, 0.61);
+}
+
+:global(.dark) .link,
+:global(.star) .link {
+  color: #151515;
+  background-color: rgba(255, 255, 0, 0.934);
+}
+
+.cvLink {
+  position: relative;
+  display: inline-block;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgb(21, 21, 21);
+}
+
+:global(.dark) .cvLink {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.765);
+}
+
+:global(.star) .cvLink {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.765);
+}
+
+.cvLink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 0, 0.539);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.cvLink:hover::before {
+  transform: scaleX(1);
+}
+
+.cvLink:hover {
+  transform: scale(1.03);
+}
+
+:global(.dark) .cvLink:hover,
+:global(.star) .cvLink:hover {
+  color: #1a1a1a;
+  background-color: rgba(255, 255, 0, 0.904);
+}
