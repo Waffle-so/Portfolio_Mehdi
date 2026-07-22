@@ -182,7 +182,7 @@ export function Vscode() {
     setAiMessage('');
 
     const responses: Record<string, string> = {
-      'specialite': 'Mehdi excelle dans l\'intégration d\'IA locales (RAG, Llama.cpp), le développement Full Stack (Next.js, Node.js) et le déploiement d\'infrastructures conteneurisées (DevOps/Docker).',
+      'specialite': 'Mehdi excelle dans l\'intégration de l\'intelligence artificielle et la conception de solutions d\'IA sur mesure (comme le RAG et autres architectures adaptées), tout en maîtrisant le développement Full Stack et le déploiement d\'infrastructures conteneurisées.',
       'disponible': 'Oui ! Mehdi est disponible pour des projets SaaS autonomes et des architectures Full Stack.',
       'cv': 'Le CV de Mehdi est disponible sur demande. Contactez-le à xlutirax@gmail.com'
     };
