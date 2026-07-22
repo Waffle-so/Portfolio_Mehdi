@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
 
 .cardContainer {
   position: relative;
   width: 240px;
   height: 336px;
+  font-family: 'Pixelify Sans', sans-serif;
   /* Ratio carte à jouer (ex: 2.5 x 3.5) */
   background: radial-gradient(circle at center, #ffffff 0%, #e8e8e8 100%);
   border-radius: 12px;
@@ -114,6 +114,7 @@
 }
 
 .cardDescription {
+  font-family: 'Pixelify Sans', sans-serif;
   color: #444;
   font-size: 12px;
   text-align: center;

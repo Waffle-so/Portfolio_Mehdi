@@ -248,7 +248,7 @@
 .aiLabel {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #007acc;
+  color: #5bb0ff;
   margin-bottom: 0.5rem;
 }
 
@@ -313,7 +313,7 @@
 }
 
 .typing {
-  color: #007acc;
+  color: #5bb0ff;
   font-style: italic;
 }
 
@@ -332,4 +332,48 @@
 
 :global(.dark) .codeArea {
   background: #1e1e1e;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    border-radius: 0;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .headerLeft {
+    flex-wrap: wrap;
+    gap: 0.2rem;
+  }
+
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #3c3c3c;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+
+  .codeArea {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .aiSidebar {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #3c3c3c;
+  }
 }

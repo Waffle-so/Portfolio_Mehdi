@@ -132,6 +132,7 @@ export function ImageCard({ src, alt, backSrc, backAlt, title, label, descriptio
           size="sm"
           onClick={toggleTheme}
           className="flex-1"
+          aria-label="Changer de thème"
         >
           {theme === 'light' ? <SunIcon className="w-5 h-5" /> : theme === 'dark' ? <MoonIcon className="w-5 h-5" /> : <span className="text-lg"><StarIcon className="w-5 h-5" /></span>}
         </Button>
@@ -140,6 +141,7 @@ export function ImageCard({ src, alt, backSrc, backAlt, title, label, descriptio
           size="sm"
           onClick={toggleFont}
           className="flex-1"
+          aria-label="Changer de police"
         >
         Aa
         </Button>

@@ -26,9 +26,9 @@ export default function Home() {
       <div className={styles.container}>
         <GsapReveal>
           <ImageCard
-            src="/waffle.jpeg"
+            src="/waffle.webp"
             alt="Waffle"
-            backSrc="/mehdi_bel.png"
+            backSrc="/mehdi_bel.webp"
             backAlt="Mehdi"
             title="Belkacem Mehdi"
             label="Full Stack & AI Engineer"

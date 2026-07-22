@@ -78,7 +78,7 @@ export function PixelCard({ projects, isExpanded = false }: PixelCardProps) {
             </div>
 
             <div className={style.centerBox}>
-              <h3 className={style.cardTitle}>{project.nom}</h3>
+              <h2 className={style.cardTitle}>{project.nom}</h2>
               <span className={style.cardYear}>{project.année}</span>
             </div>
 
