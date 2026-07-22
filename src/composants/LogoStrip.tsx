@@ -4,9 +4,9 @@ import Image from 'next/image';
 import styles from '@/Style/logoStrip.module.css';
 
 const companies = [
-  { name: 'CNEP-Banque', logo: '/CNEP.png' },
-  { name: 'Algérie telecom', logo: '/télécom.png' },
-  { name: 'Ooredoo', logo: '/Ooredoo.png' },
+  { name: 'CNEP-Banque', logo: '/CNEP.webp' },
+  { name: 'Algérie telecom', logo: '/télécom.webp' },
+  { name: 'Ooredoo', logo: '/Ooredoo.webp' },
 ];
 
 export function LogoStrip() {
