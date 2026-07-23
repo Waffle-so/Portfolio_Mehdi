@@ -12,15 +12,24 @@ interface ImageCardProps {
   backSrc?: string;
   backAlt?: string;
   title?: string;
+  titleEn?: string;
   label?: string;
+  labelEn?: string;
   description?: string;
+  descriptionEn?: string;
+  language?: 'fr' | 'en';
+  onToggleLanguage?: () => void;
 }
 
-export function ImageCard({ src, alt, backSrc, backAlt, title, label, description }: ImageCardProps) {
+export function ImageCard({ src, alt, backSrc, backAlt, title, titleEn, label, labelEn, description, descriptionEn, language: propLanguage, onToggleLanguage }: ImageCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark' | 'star'>('light');
   const [currentFont, setCurrentFont] = useState<'Satoshi' | 'Author'>('Satoshi');
   const [hasPlayedInitialAnimation, setHasPlayedInitialAnimation] = useState(false);
+  const [internalLanguage, setInternalLanguage] = useState<'fr' | 'en'>('fr');
+
+  const language = propLanguage || internalLanguage;
+  const toggleLanguage = onToggleLanguage || (() => setInternalLanguage((prev) => (prev === 'fr' ? 'en' : 'fr')));
 
   useEffect(() => {
     const root = document.documentElement;
@@ -116,10 +125,14 @@ export function ImageCard({ src, alt, backSrc, backAlt, title, label, descriptio
 
           {/* Title + Label */}
           <div className={styles.titleLabelSection}>
-            {title && <h3 className={styles.title}>{title}</h3>}
-            {label && (
+            {(title || titleEn) && (
+              <h3 className={styles.title}>
+                {language === 'en' && titleEn ? titleEn : title}
+              </h3>
+            )}
+            {(label || labelEn) && (
               <div className={styles.label}>
-                {label}
+                {language === 'en' && labelEn ? labelEn : label}
               </div>
             )}
           </div>
@@ -130,9 +143,18 @@ export function ImageCard({ src, alt, backSrc, backAlt, title, label, descriptio
           <Button
             variant="outline"
             size="sm"
+            onClick={toggleLanguage}
+            className="flex-1 font-bold"
+            aria-label={language === 'en' ? 'Change language' : 'Changer de langue'}
+          >
+            {language === 'en' ? 'EN' : 'FR'}
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
             onClick={toggleTheme}
             className="flex-1"
-            aria-label="Changer de thème"
+            aria-label={language === 'en' ? 'Change theme' : 'Changer de thème'}
           >
             {theme === 'light' ? <SunIcon className="w-5 h-5" /> : theme === 'dark' ? <MoonIcon className="w-5 h-5" /> : <span className="text-lg"><StarIcon className="w-5 h-5" /></span>}
           </Button>
@@ -141,7 +163,7 @@ export function ImageCard({ src, alt, backSrc, backAlt, title, label, descriptio
             size="sm"
             onClick={toggleFont}
             className="flex-1"
-            aria-label="Changer de police"
+            aria-label={language === 'en' ? 'Change font' : 'Changer de police'}
           >
             Aa
           </Button>
@@ -149,9 +171,9 @@ export function ImageCard({ src, alt, backSrc, backAlt, title, label, descriptio
       </div>
 
       {/* Description */}
-      {description && (
+      {(description || descriptionEn) && (
         <div className={styles.description}>
-          <p>{description}</p>
+          <p>{language === 'en' && descriptionEn ? descriptionEn : description}</p>
         </div>
       )}
     </div>

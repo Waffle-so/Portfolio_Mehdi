@@ -9,15 +9,25 @@ const companies = [
   { name: 'Ooredoo', logo: '/Ooredoo.webp' },
 ];
 
-export function LogoStrip() {
+interface LogoStripProps {
+  language?: 'fr' | 'en';
+}
+
+export function LogoStrip({ language = 'fr' }: LogoStripProps) {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.badge}>
         </div>
-        <h2 className={styles.title}>Des projets à impact réel</h2>
+        <h2 className={styles.title}>
+          {language === 'en' ? 'Projects with real impact' : 'Des projets à impact réel'}
+        </h2>
         <p className={styles.subtitle}>
-          Des systèmes réels. Des contraintes réelles. <br /> Du code qui tourne en production.
+          {language === 'en' ? (
+            <>Real systems. Real constraints. <br /> Code that runs in production.</>
+          ) : (
+            <>Des systèmes réels. Des contraintes réelles. <br /> Du code qui tourne en production.</>
+          )}
         </p>
       </div>
       <div className={styles.grid}>
